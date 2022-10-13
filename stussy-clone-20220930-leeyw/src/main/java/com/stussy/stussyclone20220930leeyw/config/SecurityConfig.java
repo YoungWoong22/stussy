@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
@@ -21,22 +23,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/account/login")
+                .loginPage("/account/login")            //login page Get 요청
+                .loginProcessingUrl("/account/login")   //login service Post요청
                 .defaultSuccessUrl("/index");
      }
 
 }
-//
-//
-//        http.csrf().disable();
-//                http.httpBasic().disable();                   //
-//                http.authorizeRequests()                      //
-//                .antMatchers("/account/mypage" , "/index")    //경로
-//                .authenticated()                              //인증을 해라
-//                .anyRequest()                                 //
-//                .permitAll()                                  //
-//                .and()                                        //그리고
-//                .formLogin()                                  //formLogin에 대한 설정을 할것이다.
-//                .loginPage("/account/login")                  //
-//                .defaultSuccessUrl("/index");                 //
 
