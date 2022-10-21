@@ -19,6 +19,7 @@ public class ProductCategory {
         return CategoryResponseDto.builder()
                 .id(category_id)
                 .name(category_name)
+
                 .build();
     }
 }

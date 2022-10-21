@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class ProductManagementController {
 
-    @GetMapping("/Product/register")
+    @GetMapping("/product/register")
     public String loadProductRegister(){
         return "admin/product_registration";
     }
