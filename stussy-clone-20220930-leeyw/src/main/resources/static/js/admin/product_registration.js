@@ -81,6 +81,12 @@ class RegisterApi {
         
         return responseResult;
     }
+
+
+
+
+
+
 }
 
 class RegisterEventService {
@@ -194,6 +200,17 @@ class RegisterService {
 
     setRegisterHeaderEvent(){
         new RegisterEventService();
+    }
+}
+
+    class ListService{
+        static #instance = null;
+
+        getInstance() {
+        if(this.#instance == null){
+            this.#instance = new ListService();
+        }
+        return this.#instance;
     }
 }
 
