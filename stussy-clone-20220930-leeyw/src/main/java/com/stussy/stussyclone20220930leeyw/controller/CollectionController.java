@@ -9,6 +9,6 @@ public class CollectionController {
 
     @GetMapping("/collections/{category}")
     public String locadCollections(@PathVariable String category) {
-        return "product/collections_number";
+        return "product/collections_scroll";
     }
 }
