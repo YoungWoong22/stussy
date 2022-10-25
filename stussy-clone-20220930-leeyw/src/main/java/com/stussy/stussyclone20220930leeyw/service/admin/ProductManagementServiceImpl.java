@@ -1,6 +1,7 @@
 package com.stussy.stussyclone20220930leeyw.service.admin;
 
 import com.stussy.stussyclone20220930leeyw.dto.admin.CategoryResponseDto;
+import com.stussy.stussyclone20220930leeyw.dto.admin.ProductMstOptionRespDto;
 import com.stussy.stussyclone20220930leeyw.dto.admin.ProductRegisterReqDto;
 import com.stussy.stussyclone20220930leeyw.exception.CustomInternalServerErrorException;
 import com.stussy.stussyclone20220930leeyw.repository.admin.ProductManagementRepository;
@@ -12,25 +13,33 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ProductManagementServiceImpl implements ProductManagementService{
+public class ProductManagementServiceImpl implements ProductManagementService {
 
     private final ProductManagementRepository productManagementRepository;
 
     @Override
-    public List<CategoryResponseDto> getCategoryList() throws Exception{
+    public List<CategoryResponseDto> getCategoryList() throws Exception {
         List<CategoryResponseDto> categoryResponseDtos = new ArrayList<CategoryResponseDto>();
-        productManagementRepository.getCategoryList().forEach(category ->{
+        productManagementRepository.getCategoryList().forEach(category -> {
             categoryResponseDtos.add(category.toDto());
         });
         return categoryResponseDtos;
     }
 
-
     @Override
     public void registerMst(ProductRegisterReqDto productRegisterReqDto) throws Exception{
-        if(productManagementRepository.saveProductMst(productRegisterReqDto.toEntity()) ==0){
+        if(productManagementRepository.saveProductMst(productRegisterReqDto.toEntity()) == 0) {
             throw new CustomInternalServerErrorException("상품 등록 실패");
         }
+    }
 
+    @Override
+    public List<ProductMstOptionRespDto> getProductMstList() throws Exception {
+        List<ProductMstOptionRespDto> list = new ArrayList<ProductMstOptionRespDto>();
+        productManagementRepository.getProductMstList().forEach(pdtMst -> {
+            list.add(pdtMst.toDto());
+        });
+
+        return list;
     }
 }

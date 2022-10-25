@@ -30,12 +30,6 @@ public class ProductRegisterReqDto {
                 .pdt_option_info(optionInfo)
                 .pdt_management_info(managementInfo)
                 .pdt_shipping_info(shippingInfo)
-
                 .build();
-
-
-
-
     }
-
 }
