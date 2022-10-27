@@ -1,24 +1,29 @@
 package com.stussy.stussyclone20220930leeyw.service.admin;
 
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductRegisterDtlReqDto;
-import com.stussy.stussyclone20220930leeyw.dto.admin.CategoryResponseDto;
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductMstOptionRespDto;
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductRegisterReqDto;
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductSizeOptionRespDto;
+import com.stussy.stussyclone20220930leeyw.domain.ProductImg;
+import com.stussy.stussyclone20220930leeyw.dto.admin.*;
 import com.stussy.stussyclone20220930leeyw.exception.CustomInternalServerErrorException;
 import com.stussy.stussyclone20220930leeyw.exception.CustomValidationException;
 import com.stussy.stussyclone20220930leeyw.repository.admin.ProductManagementRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ProductManagementServiceImpl implements ProductManagementService {
+
+    @Value("${file.path}")
+    private String filePath;
 
     private final ProductManagementRepository productManagementRepository;
 
@@ -73,5 +78,47 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         if(productManagementRepository.saveProductDtl(productRegisterDtlReqDto.toEntity()) == 0) {
             throw new CustomInternalServerErrorException("상품 등록 오류");
         }
+    }
+
+    @Override
+    public void registerImg(ProductImgReqDto productImgReqDto) throws Exception {
+        log.info("pdtId >>>" + productImgReqDto.getPdt_id());
+
+        if(productImgReqDto.getFiles() == null){
+            Map<String, String> errorMap = new HashMap<String, String>();
+            errorMap.put("error", "이미지를 선택하지 않았습니다.");
+            throw new CustomInternalServerErrorException("Img Error, errorMap");
+        }
+
+        List<ProductImg> productImgs = new ArrayList<ProductImg>();
+
+
+        productImgReqDto.getFiles().forEach(file -> {
+            String originName = file.getOriginalFilename();
+            String extension = originName.substring(originName.lastIndexOf('.'));
+            String saveName = UUID.randomUUID().toString().replaceAll("_","")+extension;
+
+            Path path = Paths.get(filePath + "product/" + saveName);    //이미지 경로
+
+            File f = new File(filePath + "product");
+            if(!f.exists()) {
+                f.mkdirs();         // mkdirs 는 하위경로를 만들어주지만 mkdir 은 하위경로를 만들어주지않는다.
+            }
+
+            try {
+                Files.write(path, file.getBytes());
+            } catch (IOException e) {
+                throw new CustomInternalServerErrorException(e.getMessage());
+            }
+
+            productImgs.add(ProductImg.builder()
+                            .pdt_id(productImgReqDto.getPdt_id())
+                            .origin_name(originName)
+                            .save_name(saveName)
+                    .build());
+
+        });
+
+        productManagementRepository.saveProductImg(productImgs);
     }
 }

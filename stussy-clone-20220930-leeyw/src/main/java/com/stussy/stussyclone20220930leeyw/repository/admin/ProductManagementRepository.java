@@ -17,4 +17,6 @@ public interface ProductManagementRepository {
     public int findProductColor(ProductDetail productDetail) throws Exception;
 
     public int saveProductDtl(ProductDetail productDetail) throws Exception;
+
+    public int saveProductImg(List<ProductImg> productImgs) throws Exception;
 }
