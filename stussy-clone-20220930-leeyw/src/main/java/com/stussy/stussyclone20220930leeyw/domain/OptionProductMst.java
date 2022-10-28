@@ -14,12 +14,11 @@ public class OptionProductMst {
     private String category;
     private String pdt_name;
 
-
-public ProductMstOptionRespDto toDto(){
-    return ProductMstOptionRespDto.builder()
-            .pdtId(pdt_id)
-            .category(category)
-            .pdtName(pdt_name)
-            .build();
-}
+    public ProductMstOptionRespDto toDto() {
+        return ProductMstOptionRespDto.builder()
+                .pdtId(pdt_id)
+                .category(category)
+                .pdtName(pdt_name)
+                .build();
+    }
 }

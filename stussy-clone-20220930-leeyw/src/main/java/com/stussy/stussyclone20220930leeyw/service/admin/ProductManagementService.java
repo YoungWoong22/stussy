@@ -19,5 +19,4 @@ public interface ProductManagementService {
     public void registerDtl(ProductRegisterDtlReqDto productRegisterDtlReqDto) throws Exception;
 
     public void registerImg(ProductImgReqDto productImgReqDto) throws Exception;
-
 }

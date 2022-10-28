@@ -6,9 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
-@NoArgsConstructor
 public class ProductImg {
     private int id;
     private int pdt_id;

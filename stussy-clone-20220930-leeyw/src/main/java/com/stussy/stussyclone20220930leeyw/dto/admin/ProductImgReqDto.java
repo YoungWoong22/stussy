@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 public class ProductImgReqDto {
-    private int pdt_id;
+    private int pdtId;
     private List<MultipartFile> files;
 }

@@ -16,5 +16,4 @@ public class Role {
     private String name;
     private LocalDateTime create_date;
     private LocalDateTime update_date;
-
 }

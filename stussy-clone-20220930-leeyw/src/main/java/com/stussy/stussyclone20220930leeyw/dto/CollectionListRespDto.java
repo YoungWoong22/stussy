@@ -11,5 +11,4 @@ public class CollectionListRespDto {
     private int productPrice;
     private String mainImg;
     private int productTotalCount;
-
 }

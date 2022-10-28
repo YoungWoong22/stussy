@@ -1,33 +1,28 @@
 * {
     box-sizing: border-box;
-    
+
     font-size: 11px;
 }
 
-body{
+body {
     margin: 0;
-
-
-    background-color: white;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-.button{
-    border:  none;
+button {
+    border: none;
     background: none;
 
     cursor: pointer;
-
 }
 
-.btn{
+.btn {
     border: 1px solid black;
     padding: 10px;
-
 }
 
 input, textarea, select {
@@ -39,16 +34,28 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-    border:  1px solid black;
+    border: 1px solid black;
 }
 
-ul{
+ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-
 }
 
-main{
+main {
     margin-top: 60px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid rgb(198, 198, 198);
+}
+
+th, td {
+    border: 1px solid rgb(198, 198, 198);
+
+    height: 30px;
+
+    text-align: center;
 }
