@@ -1,5 +1,4 @@
-package com.stussy.stussyclone20220930leeyw.controller.admin;
-
+package com.stussy.stussyclone20220930Leeyw.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

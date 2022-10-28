@@ -1,16 +1,14 @@
-package com.stussy.stussyclone20220930leeyw.aop;
+package com.stussy.stussyclone20220930Leeyw.aop;
 
-import com.stussy.stussyclone20220930leeyw.exception.CustomValidationException;
+import com.stussy.stussyclone20220930Leeyw.exception.CustomValidationException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BeanPropertyBindingResult;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
-import java.beans.BeanProperty;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,12 +17,11 @@ import java.util.Map;
 @Component
 public class ValidationAop {
 
-
-    //@Pointcut("execution(* com.stussy.stussyclone20220930leeyw..*Api.*(..))")
-    @Pointcut("@annotation(com.stussy.stussyclone20220930leeyw.aop.annotation.ValidAspect)")
+//    @Pointcut("execution(* com.stussy.stussyclone20220930Leeyw..*Api.*(..))")
+//    private void executionPointCut() {}
+    @Pointcut("@annotation(com.stussy.stussyclone20220930Leeyw.aop.annotation.ValidAspect)")
     private void annotationPointcut() {}
 
-    //@Around("executionPointCut()")
     @Around("annotationPointcut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 
@@ -32,27 +29,22 @@ public class ValidationAop {
 
         BeanPropertyBindingResult bindingResult = null;
 
-        for(Object arg : args){
-            if (arg.getClass() == BeanPropertyBindingResult.class){
+        for(Object arg : args) {
+            if(arg.getClass() == BeanPropertyBindingResult.class) {
                 bindingResult = (BeanPropertyBindingResult) arg;
                 break;
-
-
             }
         }
 
-
-
-        if (bindingResult.hasErrors()){
+        if(bindingResult.hasErrors()) {
             Map<String, String> errorMap = new HashMap<String, String>();
 
             List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-            for(FieldError fieldError :fieldErrors){
+            for(FieldError fieldError : fieldErrors) {
                 errorMap.put(fieldError.getField(), fieldError.getDefaultMessage());
             }
 
             throw new CustomValidationException("Validation Error", errorMap);
-
         }
 
         Object result = null;
@@ -60,8 +52,6 @@ public class ValidationAop {
 
         return result;
     }
-
-
 
 
 }

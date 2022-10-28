@@ -1,8 +1,7 @@
-package com.stussy.stussyclone20220930leeyw.dto.validation;
+package com.stussy.stussyclone20220930Leeyw.dto.validation;
 
-public class ValidationGroups {
-    public interface NotBlankGroup{};
-    public interface SizeGroup{};
-    public interface PatternCheckGroup{};
-
+public interface ValidationGroups {
+    public interface NotBlankGroup {};
+    public interface SizeGroup {};
+    public interface PatternCheckGroup {};
 }

@@ -1,7 +1,6 @@
-package com.stussy.stussyclone20220930leeyw.dto.admin;
+package com.stussy.stussyclone20220930Leeyw.dto.admin;
 
-import com.stussy.stussyclone20220930leeyw.domain.Product;
-import com.stussy.stussyclone20220930leeyw.domain.ProductDetail;
+import com.stussy.stussyclone20220930Leeyw.domain.ProductDetail;
 import lombok.Data;
 
 @Data

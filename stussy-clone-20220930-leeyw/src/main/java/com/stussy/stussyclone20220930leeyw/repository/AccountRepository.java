@@ -1,6 +1,6 @@
-package com.stussy.stussyclone20220930leeyw.repository;
+package com.stussy.stussyclone20220930Leeyw.repository;
 
-import com.stussy.stussyclone20220930leeyw.domain.User;
+import com.stussy.stussyclone20220930Leeyw.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

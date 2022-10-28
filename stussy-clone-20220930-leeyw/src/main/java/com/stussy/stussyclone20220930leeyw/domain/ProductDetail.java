@@ -1,5 +1,4 @@
-package com.stussy.stussyclone20220930leeyw.domain;
-
+package com.stussy.stussyclone20220930Leeyw.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

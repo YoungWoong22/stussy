@@ -1,4 +1,4 @@
-package com.stussy.stussyclone20220930leeyw.dto;
+package com.stussy.stussyclone20220930Leeyw.dto;
 
 import lombok.Builder;
 import lombok.Data;

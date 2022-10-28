@@ -1,10 +1,10 @@
-package com.stussy.stussyclone20220930leeyw.dto.admin;
+package com.stussy.stussyclone20220930Leeyw.dto.admin;
 
 import lombok.Builder;
 import lombok.Data;
 
-@Data
 @Builder
+@Data
 public class ProductMstOptionRespDto {
     private int pdtId;
     private String category;

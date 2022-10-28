@@ -1,9 +1,8 @@
-package com.stussy.stussyclone20220930leeyw.dto;
+package com.stussy.stussyclone20220930Leeyw.dto;
 
-import com.stussy.stussyclone20220930leeyw.domain.User;
-import com.stussy.stussyclone20220930leeyw.dto.validation.ValidationGroups;
+import com.stussy.stussyclone20220930Leeyw.domain.User;
+import com.stussy.stussyclone20220930Leeyw.dto.validation.ValidationGroups;
 import lombok.Data;
-import org.apache.logging.log4j.message.Message;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.Email;

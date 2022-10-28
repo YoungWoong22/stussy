@@ -1,10 +1,9 @@
-package com.stussy.stussyclone20220930leeyw.repository;
+package com.stussy.stussyclone20220930Leeyw.repository;
 
-import com.stussy.stussyclone20220930leeyw.domain.CollectionsProduct;
-import com.stussy.stussyclone20220930leeyw.domain.Product;
+import com.stussy.stussyclone20220930Leeyw.domain.CollectionsProduct;
+import com.stussy.stussyclone20220930Leeyw.domain.Product;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,3 +13,13 @@ public interface ProductRepository {
 
     public Product getProduct(int pdtId) throws Exception;
 }
+
+
+
+
+
+
+
+
+
+

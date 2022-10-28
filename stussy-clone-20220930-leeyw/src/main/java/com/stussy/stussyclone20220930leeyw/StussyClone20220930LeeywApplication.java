@@ -1,4 +1,4 @@
-package com.stussy.stussyclone20220930leeyw;
+package com.stussy.stussyclone20220930Leeyw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

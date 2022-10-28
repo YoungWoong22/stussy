@@ -1,12 +1,12 @@
-package com.stussy.stussyclone20220930leeyw.api.admin;
+package com.stussy.stussyclone20220930Leeyw.api.admin;
 
-import com.stussy.stussyclone20220930leeyw.aop.annotation.LogAspect;
-import com.stussy.stussyclone20220930leeyw.aop.annotation.ValidAspect;
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductImgReqDto;
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductRegisterDtlReqDto;
-import com.stussy.stussyclone20220930leeyw.dto.CMRespDto;
-import com.stussy.stussyclone20220930leeyw.dto.admin.ProductRegisterReqDto;
-import com.stussy.stussyclone20220930leeyw.service.admin.ProductManagementService;
+import com.stussy.stussyclone20220930Leeyw.aop.annotation.LogAspect;
+import com.stussy.stussyclone20220930Leeyw.aop.annotation.ValidAspect;
+import com.stussy.stussyclone20220930Leeyw.dto.CMRespDto;
+import com.stussy.stussyclone20220930Leeyw.dto.admin.ProductImgReqDto;
+import com.stussy.stussyclone20220930Leeyw.dto.admin.ProductRegisterDtlReqDto;
+import com.stussy.stussyclone20220930Leeyw.dto.admin.ProductRegisterReqDto;
+import com.stussy.stussyclone20220930Leeyw.service.admin.ProductManagementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

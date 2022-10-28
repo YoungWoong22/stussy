@@ -1,7 +1,6 @@
-package com.stussy.stussyclone20220930leeyw.repository.admin;
+package com.stussy.stussyclone20220930Leeyw.repository.admin;
 
-
-import com.stussy.stussyclone20220930leeyw.domain.*;
+import com.stussy.stussyclone20220930Leeyw.domain.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -20,3 +19,15 @@ public interface ProductManagementRepository {
 
     public int saveProductImg(List<ProductImg> productImgs) throws Exception;
 }
+
+
+
+
+
+
+
+
+
+
+
+

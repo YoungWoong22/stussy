@@ -1,12 +1,9 @@
-package com.stussy.stussyclone20220930leeyw.dto.admin;
+package com.stussy.stussyclone20220930Leeyw.dto.admin;
 
-
-import com.stussy.stussyclone20220930leeyw.domain.Product;
+import com.stussy.stussyclone20220930Leeyw.domain.Product;
 import lombok.Data;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 @Data
 public class ProductRegisterReqDto {
@@ -33,3 +30,15 @@ public class ProductRegisterReqDto {
                 .build();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

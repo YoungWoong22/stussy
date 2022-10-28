@@ -1,6 +1,6 @@
-package com.stussy.stussyclone20220930leeyw.service.admin;
+package com.stussy.stussyclone20220930Leeyw.service.admin;
 
-import com.stussy.stussyclone20220930leeyw.dto.admin.*;
+import com.stussy.stussyclone20220930Leeyw.dto.admin.*;
 
 import java.util.List;
 

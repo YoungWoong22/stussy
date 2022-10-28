@@ -1,9 +1,8 @@
-package com.stussy.stussyclone20220930leeyw.api;
+package com.stussy.stussyclone20220930Leeyw.api;
 
-
-import com.stussy.stussyclone20220930leeyw.aop.annotation.LogAspect;
-import com.stussy.stussyclone20220930leeyw.dto.CMRespDto;
-import com.stussy.stussyclone20220930leeyw.service.ProductService;
+import com.stussy.stussyclone20220930Leeyw.aop.annotation.LogAspect;
+import com.stussy.stussyclone20220930Leeyw.dto.CMRespDto;
+import com.stussy.stussyclone20220930Leeyw.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +24,6 @@ public class ProductApi {
         return ResponseEntity.ok(new CMRespDto<>("Successfully", productService.getProductList(category, page)));
     }
 
-
     @GetMapping("/product/{pdtId}")
     public ResponseEntity<?> getProduct(@PathVariable int pdtId) throws Exception {
 
@@ -35,3 +33,14 @@ public class ProductApi {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
-package com.stussy.stussyclone20220930leeyw.domain;
+package com.stussy.stussyclone20220930Leeyw.domain;
 
-import com.stussy.stussyclone20220930leeyw.dto.CollectionListRespDto;
+import com.stussy.stussyclone20220930Leeyw.dto.CollectionListRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

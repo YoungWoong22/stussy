@@ -1,10 +1,10 @@
-package com.stussy.stussyclone20220930leeyw.service;
+package com.stussy.stussyclone20220930Leeyw.service;
 
-import com.stussy.stussyclone20220930leeyw.domain.Product;
-import com.stussy.stussyclone20220930leeyw.dto.CollectionListRespDto;
-import com.stussy.stussyclone20220930leeyw.dto.ProductRespDto;
-import com.stussy.stussyclone20220930leeyw.exception.CustomValidationException;
-import com.stussy.stussyclone20220930leeyw.repository.ProductRepository;
+import com.stussy.stussyclone20220930Leeyw.domain.Product;
+import com.stussy.stussyclone20220930Leeyw.dto.CollectionListRespDto;
+import com.stussy.stussyclone20220930Leeyw.dto.ProductRespDto;
+import com.stussy.stussyclone20220930Leeyw.exception.CustomValidationException;
+import com.stussy.stussyclone20220930Leeyw.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
 
 @Service
 @RequiredArgsConstructor
@@ -85,6 +83,14 @@ public class ProductServiceImpl implements ProductService {
         return dto;
     }
 }
+
+
+
+
+
+
+
+
 
 
 

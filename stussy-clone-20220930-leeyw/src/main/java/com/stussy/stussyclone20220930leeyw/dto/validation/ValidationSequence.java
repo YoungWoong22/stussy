@@ -1,5 +1,4 @@
-package com.stussy.stussyclone20220930leeyw.dto.validation;
-
+package com.stussy.stussyclone20220930Leeyw.dto.validation;
 
 import javax.validation.GroupSequence;
 import javax.validation.groups.Default;

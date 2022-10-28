@@ -1,13 +1,10 @@
-package com.stussy.stussyclone20220930leeyw.service;
+package com.stussy.stussyclone20220930Leeyw.service;
 
-import com.stussy.stussyclone20220930leeyw.domain.User;
-import com.stussy.stussyclone20220930leeyw.dto.RegisterReqDto;
-import org.apache.ibatis.annotations.Mapper;
+import com.stussy.stussyclone20220930Leeyw.dto.RegisterReqDto;
 
-@Mapper
 public interface AccountService {
 
-    void duplicateEmail(RegisterReqDto registerReqDto) throws Exception;
+    public void duplicateEmail(RegisterReqDto registerReqDto) throws Exception;
+    public void register(RegisterReqDto registerReqDto) throws Exception;
 
-    void register(RegisterReqDto registerReqDto) throws Exception;
 }

@@ -1,16 +1,15 @@
-package com.stussy.stussyclone20220930leeyw.service;
+package com.stussy.stussyclone20220930Leeyw.service;
 
-import com.stussy.stussyclone20220930leeyw.domain.User;
-import com.stussy.stussyclone20220930leeyw.dto.RegisterReqDto;
-import com.stussy.stussyclone20220930leeyw.exception.CustomInternalServerErrorException;
-import com.stussy.stussyclone20220930leeyw.exception.CustomValidationException;
-import com.stussy.stussyclone20220930leeyw.repository.AccountRepository;
+import com.stussy.stussyclone20220930Leeyw.domain.User;
+import com.stussy.stussyclone20220930Leeyw.dto.RegisterReqDto;
+import com.stussy.stussyclone20220930Leeyw.exception.CustomInternalServerErrorException;
+import com.stussy.stussyclone20220930Leeyw.exception.CustomValidationException;
+import com.stussy.stussyclone20220930Leeyw.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-
 
 @Service
 @RequiredArgsConstructor
@@ -31,21 +30,26 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
-
     @Override
     public void register(RegisterReqDto registerReqDto) throws Exception {
         // 회원가입 진행
         User user = registerReqDto.toEntity();
         int result = accountRepository.saveUser(user);
-
-        if(result == 0){
-            throw new CustomInternalServerErrorException("회원가입 중 문제가 발생하였습니다.");
+        if(result == 0) {
+            throw new CustomInternalServerErrorException("회원가입 중 문제가 발생하였습니다");
         }
-
-
-
     }
 
 
-
 }
+
+
+
+
+
+
+
+
+
+
+

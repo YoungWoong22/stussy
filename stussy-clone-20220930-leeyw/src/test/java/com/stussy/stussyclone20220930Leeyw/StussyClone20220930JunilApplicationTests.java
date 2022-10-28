@@ -1,10 +1,10 @@
-package com.stussy.stussyclone20220930leeyw;
+package com.stussy.stussyclone20220930Leeyw;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StussyClone20220930LeeywApplicationTests {
+class StussyClone20220930JunilApplicationTests {
 
 	@Test
 	void contextLoads() {

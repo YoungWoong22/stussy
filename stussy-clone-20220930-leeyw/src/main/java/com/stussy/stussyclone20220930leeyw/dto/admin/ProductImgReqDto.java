@@ -1,4 +1,4 @@
-package com.stussy.stussyclone20220930leeyw.dto.admin;
+package com.stussy.stussyclone20220930Leeyw.dto.admin;
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;

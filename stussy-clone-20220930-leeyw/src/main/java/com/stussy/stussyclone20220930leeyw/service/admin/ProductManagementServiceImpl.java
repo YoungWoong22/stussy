@@ -1,11 +1,10 @@
-package com.stussy.stussyclone20220930leeyw.service.admin;
+package com.stussy.stussyclone20220930Leeyw.service.admin;
 
-import ch.qos.logback.core.property.ResourceExistsPropertyDefiner;
-import com.stussy.stussyclone20220930leeyw.domain.ProductImg;
-import com.stussy.stussyclone20220930leeyw.dto.admin.*;
-import com.stussy.stussyclone20220930leeyw.exception.CustomInternalServerErrorException;
-import com.stussy.stussyclone20220930leeyw.exception.CustomValidationException;
-import com.stussy.stussyclone20220930leeyw.repository.admin.ProductManagementRepository;
+import com.stussy.stussyclone20220930Leeyw.domain.ProductImg;
+import com.stussy.stussyclone20220930Leeyw.dto.admin.*;
+import com.stussy.stussyclone20220930Leeyw.exception.CustomInternalServerErrorException;
+import com.stussy.stussyclone20220930Leeyw.exception.CustomValidationException;
+import com.stussy.stussyclone20220930Leeyw.repository.admin.ProductManagementRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
@@ -124,12 +123,21 @@ public class ProductManagementServiceImpl implements ProductManagementService {
             }
 
             productImgs.add(ProductImg.builder()
-                    .pdt_id(productImgReqDto.getPdtId())
-                    .origin_name(originName)
-                    .save_name(saveName)
-                    .build());
+                            .pdt_id(productImgReqDto.getPdtId())
+                            .origin_name(originName)
+                            .save_name(saveName)
+                            .build());
         });
 
         productManagementRepository.saveProductImg(productImgs);
     }
 }
+
+
+
+
+
+
+
+
+
