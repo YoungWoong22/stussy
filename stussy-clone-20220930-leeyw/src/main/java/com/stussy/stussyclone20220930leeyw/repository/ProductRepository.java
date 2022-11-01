@@ -2,6 +2,7 @@ package com.stussy.stussyclone20220930Leeyw.repository;
 
 import com.stussy.stussyclone20220930Leeyw.domain.CollectionsProduct;
 import com.stussy.stussyclone20220930Leeyw.domain.Product;
+import com.stussy.stussyclone20220930Leeyw.domain.PaymentProduct;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -12,6 +13,8 @@ public interface ProductRepository {
     public List<CollectionsProduct> getProductList(Map<String, Object> map) throws Exception;
 
     public Product getProduct(int pdtId) throws Exception;
+
+    public PaymentProduct getPaymentProduct(int PdtId) throws Exception;
 }
 
 

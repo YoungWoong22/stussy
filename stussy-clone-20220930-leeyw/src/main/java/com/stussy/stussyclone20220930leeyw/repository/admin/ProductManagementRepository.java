@@ -21,13 +21,3 @@ public interface ProductManagementRepository {
 }
 
 
-
-
-
-
-
-
-
-
-
-

@@ -6,7 +6,8 @@ import com.stussy.stussyclone20220930Leeyw.exception.CustomInternalServerErrorEx
 import com.stussy.stussyclone20220930Leeyw.exception.CustomValidationException;
 import com.stussy.stussyclone20220930Leeyw.repository.admin.ProductManagementRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.Slf4j;;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
@@ -91,21 +92,23 @@ public class ProductManagementServiceImpl implements ProductManagementService {
 
         List<ProductImg> productImgs = new ArrayList<ProductImg>();
 
-        productImgReqDto.getFiles().forEach(file -> {
-            Resource resource = resourceLoader.getResource("classpath:static/upload/product");
+        productImgReqDto.getFiles().forEach(file -> {   //mac은 경로앞에 절대 경로 지정을 해주어야한다.
+            Resource resource = resourceLoader.getResource("classpath:/static/upload/product");
             String filePath = null;
 
             try {
                 if(!resource.exists()){
-                    String tempPath = resourceLoader.getResource("classpath:static").getURI().toString();
-                    tempPath = tempPath.substring(tempPath.indexOf("/") + 1);
-
+                    String tempPath = resourceLoader.getResource("classpath:/static").getURI().toString();
+                    //mac은 경로앞에 절대 경로 지정을 해주어야한다.
+                    tempPath = "/" + tempPath.substring(tempPath.indexOf("/") + 1);
+                    System.out.println(tempPath);
+                    //mac은 경로앞에 절대 경로 지정을 해주어야한다.
                     File f = new File(tempPath + "/upload/product");
                     f.mkdirs();
                 }
                 filePath = resource.getURI().toString();
-
-                filePath = filePath.substring(filePath.indexOf("/") + 1);
+                        //mac은 경로앞에 절대 경로 지정을 해주어야한다.
+                filePath = "/" + filePath.substring(filePath.indexOf("/") + 1);
                 System.out.println(filePath);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -123,21 +126,13 @@ public class ProductManagementServiceImpl implements ProductManagementService {
             }
 
             productImgs.add(ProductImg.builder()
-                            .pdt_id(productImgReqDto.getPdtId())
-                            .origin_name(originName)
-                            .save_name(saveName)
-                            .build());
+                    .pdt_id(productImgReqDto.getPdtId())
+                    .origin_name(originName)
+                    .save_name(saveName)
+                    .build());
         });
 
         productManagementRepository.saveProductImg(productImgs);
     }
 }
-
-
-
-
-
-
-
-
 
