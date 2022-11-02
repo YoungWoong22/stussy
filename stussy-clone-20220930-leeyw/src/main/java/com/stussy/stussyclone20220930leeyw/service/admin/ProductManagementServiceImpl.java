@@ -107,7 +107,7 @@ public class ProductManagementServiceImpl implements ProductManagementService {
                     f.mkdirs();
                 }
                 filePath = resource.getURI().toString();
-                        //mac은 경로앞에 절대 경로 지정을 해주어야한다.
+                //mac은 경로앞에 절대 경로 지정을 해주어야한다.
                 filePath = "/" + filePath.substring(filePath.indexOf("/") + 1);
                 System.out.println(filePath);
             } catch (IOException e) {
@@ -135,4 +135,3 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         productManagementRepository.saveProductImg(productImgs);
     }
 }
-
