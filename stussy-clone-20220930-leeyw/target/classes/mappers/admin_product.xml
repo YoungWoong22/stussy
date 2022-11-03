@@ -48,7 +48,7 @@
             left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
     </select>
 
-    <select id="getSizeList" parameterType="Integer" resultType="com.stussy.stussyclone20220930Leeyw.domain.OptionProductSize">
+    <select id="getSizeList" resultType="com.stussy.stussyclone20220930Leeyw.domain.OptionProductSize">
         select
             psd.id as size_id,
             psm.size_name
