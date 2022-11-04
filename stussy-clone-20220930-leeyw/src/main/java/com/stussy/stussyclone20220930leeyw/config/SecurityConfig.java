@@ -11,9 +11,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @EnableWebSecurity
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PrincipalOauth2Service principalOauth2Service;
@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.httpBasic().disable();
         http.authorizeRequests()
-                .antMatchers("/account/mypage", "/index" , "/checkout")
+                .antMatchers("/account/mypage", "/index", "/checkout")
                 .authenticated()
 //                .antMatchers("/admin/**")
 //                .hasRole("ADMIN")

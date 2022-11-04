@@ -67,16 +67,14 @@ public class PrincipalOauth2Service extends DefaultOAuth2UserService {
                     .build();
 
             accountRepository.saveUser(user);
-        } else if(user.getProvider() == null) {
-            //연동
+        } else if (user.getProvider() == null) {
+            // 연동
             user.setProvider(provider);
-            accountRepository.updateUser(user);
-        }else if(!user.getProvider().contains(provider)) {
+            accountRepository.updateProvider(user);
+        } else if (!user.getProvider().contains((provider))){
             user.setProvider(user.getProvider() + "," + provider);
-            accountRepository.updateUser(user);
+            accountRepository.updateProvider(user);
         }
-
-        System.out.println(user);
 
         return new PrincipalDetails(user, oauth2Attributes);
     }

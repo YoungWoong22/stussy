@@ -23,14 +23,16 @@
         <result property="update_date" column="update_date"/>
         <collection property="role" resultMap="role"/>
     </resultMap>
-    <update id="updateUser" parameterType="com.stussy.stussyclone20220930Leeyw.domain.User">
+
+    <update id="updateProvider" parameterType="com.stussy.stussyclone20220930Leeyw.domain.User">
         update
-            user_mst
+        user_mst
         set
-            provider = #{provider},
-            update_date = now()
+        provider = ${provider},
+        update_date = now()
         where
-            id = #{id}
+        id = #{id}
+
     </update>
 
 

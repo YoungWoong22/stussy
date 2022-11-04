@@ -92,23 +92,21 @@ public class ProductManagementServiceImpl implements ProductManagementService {
 
         List<ProductImg> productImgs = new ArrayList<ProductImg>();
 
-        productImgReqDto.getFiles().forEach(file -> {   //mac은 경로앞에 절대 경로 지정을 해주어야한다.
+        productImgReqDto.getFiles().forEach(file -> {
             Resource resource = resourceLoader.getResource("classpath:/static/upload/product");
             String filePath = null;
 
             try {
                 if(!resource.exists()){
                     String tempPath = resourceLoader.getResource("classpath:/static").getURI().toString();
-                    //mac은 경로앞에 절대 경로 지정을 해주어야한다.
-                    tempPath = "/" + tempPath.substring(tempPath.indexOf("/") + 1);
-                    System.out.println(tempPath);
-                    //mac은 경로앞에 절대 경로 지정을 해주어야한다.
+                    tempPath = "/"+ tempPath.substring(tempPath.indexOf("/") + 1);
+
                     File f = new File(tempPath + "/upload/product");
                     f.mkdirs();
                 }
                 filePath = resource.getURI().toString();
-                //mac은 경로앞에 절대 경로 지정을 해주어야한다.
-                filePath = "/" + filePath.substring(filePath.indexOf("/") + 1);
+
+                filePath = "/"+ filePath.substring(filePath.indexOf("/") + 1);
                 System.out.println(filePath);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -135,3 +133,10 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         productManagementRepository.saveProductImg(productImgs);
     }
 }
+
+
+
+
+
+
+
